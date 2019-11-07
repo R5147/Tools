@@ -36,6 +36,7 @@ th_td_line = '\t'*(base_line+1+1+1)
 
 for table in tables:
     print(table_line+'<table class="data_table">')
+    new_table_content += table_line+'<table class="data_table">\n'
 
     trs = table.find_all('tr')
 
@@ -45,23 +46,36 @@ for table in tables:
         if tr_index == 0:
             if ths:
                 print(thead_tbody_line+'<thead>')
+                new_table_content += thead_tbody_line+'<thead>\n'
                 print(tr_line+'<tr>')
+                new_table_content += tr_line + '<tr>\n'
             for th in ths:
                 th_text = th.text.strip()
                 print(th_td_line+'<th>'+th_text+'</th>')
+                new_table_content += th_td_line+'<th>'+th_text+'</th>\n'
             if ths:
                 print(tr_line+'</tr>')
+                new_table_content += tr_line+'</tr>\n'
                 print(thead_tbody_line+'</thead>')
+                new_table_content += thead_tbody_line+'</thead>\n'
             print(thead_tbody_line+'<tbody>')
+            new_table_content += thead_tbody_line+'<tbody>\n'
 
         if tds:
             print(tr_line+'<tr>')
+            new_table_content += tr_line+'<tr>\n'
             for td in tds:
                 td_text = td.text.strip()
                 print(th_td_line+'<td>'+filter_td(td_text)+'</td>')
+                new_table_content += th_td_line+'<td>'+filter_td(td_text)+'</td>\n'
             print(tr_line+'</tr>')
+            new_table_content += tr_line+'</tr>\n'
 
     print(thead_tbody_line+'</tbody>')
+    new_table_content += thead_tbody_line+'</tbody>\n'
     print(table_line+'</table>')
+    new_table_content += table_line+'</table>\n\n'
 
     print('=======================================')
+
+pyperclip.copy(new_table_content)
