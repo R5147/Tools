@@ -1,6 +1,27 @@
 from bs4 import BeautifulSoup
 import pyperclip
 
+"""
+css setting:
+		table{
+			max-width: 800px;
+			min-width: 100px !important;
+		}
+		table td{
+			vertical-align: top;
+		}
+		table>thead>tr>th{
+			text-align: center !important;
+			width: 50%;
+		}
+		.div_responsive_table_1{
+			overflow-x: initial;
+			overflow-y: initial;
+		}
+
+
+"""
+
 html = pyperclip.paste()
 
 def filter_td(string):
