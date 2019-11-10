@@ -6,6 +6,25 @@
 # Assume that the birthday and current date are correct dates (and no 
 # time travel).
 
+# [Aim]
+# Calculate day_old using two inputs (birthday, current date)
+# Inputs for birthday and current date
+# - birthday (year1, month1, day1)
+# - current date (year2, month2, day2)
+# 
+# [Process analyse]
+# 1. initialise varialbe day_old, year_diff, month_days1, month_days2
+# 2. update month_days1 or/and month_days2 if year1 or/and year2 is/are leap year
+# 3. check if year_diff == 0, if it is true, go to step 3.1., else, go to step 4
+# 3.1. calculate day_old by finding the date between two months (current_year_days function is required), then, go to step 6
+# 4. check if year_diff == 1, if it is true, go to step 4.1, else, go to step 5
+# 4.1. calculate day_old by finding the first and last year day (year_days function is required), then, go to step 6
+# 5. calculate day_old by finding the first year day, last year day and the year(s) day between first and last year (year_days function is required), then, go to step 6
+# 6. return the day_old
+# 
+# [Code]
+
+
 def is_leap_year(y):
     if y % 4 != 0:
         return False
