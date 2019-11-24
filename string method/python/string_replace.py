@@ -27,6 +27,7 @@ def string_replace(old_string, search_string, replace_string, replacement=-1):
     return result_string
 
 
+# example [start]
 string = "Helllo worlllllld"
 find = 'l'
 replace_text = 'p'
@@ -44,3 +45,4 @@ find = 'lll'
 replace_text = 'a'
 print(string.replace(find, replace_text, sequence))  # Heao woraad
 print(string_replace(string, find, replace_text, sequence))  # Heao woraad
+# example [end]
