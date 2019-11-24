@@ -25,3 +25,5 @@ def string_replace(old_string, search_string, replace_string, replacement=-1):
             result_string = result_string[:replace_points[i] + (len(replace_string) - len(search_string)) * i] + replace_string + result_string[replace_points[i] + (len(replace_string) - len(search_string)) * i + len(search_string):]
 
     return result_string
+
+
