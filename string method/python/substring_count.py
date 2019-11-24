@@ -9,3 +9,16 @@ def substring_count(old_string, search_string):
             elif i > result[-1] + len(search_string) - 1:
                 result.append(i)
     return result
+
+string = "Hello world!"
+find = "l"
+print(len(substring_count(string, find)))
+# 3
+print(substring_count(string, find))
+# [2, 3, 9]
+
+find = "ll"
+print(len(substring_count(string, find)))
+# 1
+print(substring_count(string, find))
+# [2]
