@@ -7,12 +7,12 @@ public class Test{
 	}
 	
 	public static String repeat(String s, int n) {
+		if(n <= 0) {
+			return "";
+		}
 		String result = s;
 		for(int i = 0; i < n - 1; i++) {
 			result += s;
-		}
-		if(n <= 0) {
-			return "";
 		}
 		return result;
 	}
