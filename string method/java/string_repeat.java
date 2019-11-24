@@ -3,6 +3,7 @@ public class Test{
 		System.out.println(repeat("0", 0));  //
 		System.out.println(repeat("0", 1));  // 0
 		System.out.println(repeat("0", 3));  // 000
+		System.out.println(repeat("00", 3));  // 000000
 	}
 	
 	public static String repeat(String s, int n) {
