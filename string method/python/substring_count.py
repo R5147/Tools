@@ -10,6 +10,9 @@ def substring_count(old_string, search_string):
                 result.append(i)
     return result
 
+
+
+# example [start]
 string = "Hello world!"
 find = "l"
 print(len(substring_count(string, find)))
@@ -22,3 +25,5 @@ print(len(substring_count(string, find)))
 # 1
 print(substring_count(string, find))
 # [2]
+# example [end]
+
