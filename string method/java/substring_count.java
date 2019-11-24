@@ -5,12 +5,12 @@ public class Test {
 		String string = "Hello world!";
 		String find = "l";
 		
-		System.out.println(substring_count(string, find).length);
-		System.out.println(Arrays.toString(substring_count(string, find)));
+		System.out.println(substring_count(string, find).length);  // 3
+		System.out.println(Arrays.toString(substring_count(string, find)));  // [2, 3, 9]
 		
 		find = "ll";
-		System.out.println(substring_count(string, find).length);
-		System.out.println(Arrays.toString(substring_count(string, find)));
+		System.out.println(substring_count(string, find).length);  // 1
+		System.out.println(Arrays.toString(substring_count(string, find)));  // [2]
 		
 	}
 	
