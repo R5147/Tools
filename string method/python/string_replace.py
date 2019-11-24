@@ -27,3 +27,20 @@ def string_replace(old_string, search_string, replace_string, replacement=-1):
     return result_string
 
 
+string = "Helllo worlllllld"
+find = 'l'
+replace_text = 'p'
+sequence = 1
+
+print(string.replace(find, replace_text, sequence))  # Hepllo worlllllld
+print(string_replace(string, find, replace_text, sequence))  # Hepllo worlllllld
+
+sequence = 4
+print(string.replace(find, replace_text, sequence))  # Hepppo worpllllld
+print(string_replace(string, find, replace_text, sequence))  # Hepppo worpllllld
+
+sequence = -1
+find = 'lll'
+replace_text = 'a'
+print(string.replace(find, replace_text, sequence))  # Heao woraad
+print(string_replace(string, find, replace_text, sequence))  # Heao woraad
