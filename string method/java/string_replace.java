@@ -18,6 +18,10 @@ public class Test {
 		System.out.println(string_replace(string, find, replace_text, sequence));  // Heao woraad
 	}
 	
+	public static String string_replace(String old_string, String search_string, String replace_string) {
+		return string_replace(old_string, search_string, replace_string, -1);
+	}
+	
 	public static String string_replace(String old_string, String search_string, String replace_string, int replacement) {
 		if(search_string.length() > old_string.length()) {
 			return old_string;
