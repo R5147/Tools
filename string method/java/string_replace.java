@@ -12,10 +12,9 @@ public class Test {
 		sequence = 4;
 		System.out.println(string_replace(string, find, replace_text, sequence));  // Hepppo worpllllld
 		
-		sequence = -1;
 		find = "lll";
 		replace_text = "a";
-		System.out.println(string_replace(string, find, replace_text, sequence));  // Heao woraad
+		System.out.println(string_replace(string, find, replace_text));  // Heao woraad
 	}
 	
 	public static String string_replace(String old_string, String search_string, String replace_string) {
