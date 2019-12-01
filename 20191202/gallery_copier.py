@@ -14,12 +14,13 @@ class Copier:
     latest_backup_path = ''  # backups/latest_folder
     latest_images = {}
 
-    def __init__(self, src_path, target_path):
+    def __init__(self, src_path='', target_path=''):
         self.src_path = src_path
         self.target_path = target_path
-        self.latest_backup(self.src_path)
-        self.checker()
-        self.get_latest_images()
+        if self.src_path != '' and self.target_path != '':
+            self.latest_backup(self.src_path)
+            self.checker()
+            self.get_latest_images()
 
     @staticmethod
     def json_formatter(dict_text):
@@ -199,9 +200,13 @@ class Copier:
                                 im.save(dst, im.format)
                             break
 
-    def copy_to_production(self, lp1, lp2, tp1, tp2):
+    @staticmethod
+    def copy_to_production(lp1, lp2, tp1, tp2, cur_path):
+        with open(cur_path, 'r', encoding='utf-8') as file:
+            file_content = json.loads(file.read())
+
         # copy from source/large to large
-        for block in self.latest_images:
+        for block in file_content:
             if block['id'] != 'notes':
                 new_folder_name = lp2 + '\\' + block['id']
                 try:
@@ -214,7 +219,7 @@ class Copier:
                     copy(src, dst)
 
         # copy from source/thumbnail to thumbnail
-        for block in self.latest_images:
+        for block in file_content:
             if block['id'] != 'notes':
                 new_folder_name = tp2 + '\\' + block['id']
                 try:
@@ -233,10 +238,25 @@ if __name__ == '__main__':
     local_backups_path = data_folders['program_backups']
     local_large_path = data_folders['program_large']
 
-    copier = Copier(local_backups_path, local_large_path)
-    copier.copy_to_local_large()  # copy image from latest backup to source/large
-    copier.order_latest_images()  # sort latest_images
-    copier.update_current_gallery(data_files['gallery_data_current_json'], data_files['gallery_data_json'])  # update gallery_data_current.json based on latest_images
-    copier.resize_to_thumbnail(data_folders['program_thumbnail'])  # copy and resize images from source/large to source/thumbnail
-    # copier.copy_to_production(data_folders['program_large'], data_folders['production_large'], data_folders['program_thumbnail'], data_folders['production_thumbnail'])  # resize all images before copy all latest images to production
 
+    def step1():
+        copier = Copier(local_backups_path, local_large_path)
+        copier.copy_to_local_large()  # copy image from latest backup to source/large
+        copier.order_latest_images()  # sort latest_images
+        copier.update_current_gallery(data_files['gallery_data_current_json'], data_files['gallery_data_json'])  # update gallery_data_current.json based on latest_images
+        copier.resize_to_thumbnail(data_folders['program_thumbnail'])  # copy and resize images from source/large to source/thumbnail
+
+    def step2():
+        # check if all images resized (for images larger than 1024px marked in gallery_data_current.json (id: notes))
+        pass
+
+    def step3():
+        copier = Copier()
+        copier.copy_to_production(data_folders['program_large'], data_folders['production_large'], data_folders['program_thumbnail'], data_folders['production_thumbnail'], data_files['gallery_data_current_json'])  # resize all images before copy all latest images to production
+    
+    def stepX():
+        # copy latest images backup to local for publish use (large images, thumbnail images, js/activities_data.json)
+        pass
+    
+    # step1()
+    # step3()
