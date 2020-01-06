@@ -1,5 +1,7 @@
 import os
 import pyperclip
+import urllib.parse
+
 def open_source_file(content):
     # open source code [start] reference: https://datatofish.com/command-prompt-python/
 
@@ -7,7 +9,9 @@ def open_source_file(content):
 
     lang_type = [
         ['en', 'tc', 'sc'],
-        ['english', 'tc_chi', 'sc_chi']
+        ['english', 'tc_chi', 'sc_chi'],
+        ['eng', 'chi', 'sc'],
+        ['english', 'chinese', 'sc']
     ]
 
     for iindex, i in enumerate(lang_type):
@@ -30,7 +34,9 @@ def open_source_file(content):
 
     url_head = {
         'https://uat1.netsoft.net': '\\\\192.168.1.4\\common_website',
-        'https://srpa.netsoft.net': '\\\\192.168.1.4\\common_website\\srpa'
+        'https://srpa.netsoft.net': '\\\\192.168.1.4\\common_website\\srpa',
+        'file:///C:/Users/Raymond/Desktop': 'C:\\Users\\Raymond\\Desktop',
+        'http://localhost': 'E:\\common_website'
     }
 
     for head in url_head:
@@ -40,6 +46,7 @@ def open_source_file(content):
             string = string.replace('/', '\\')
 
             for i in string.split('\n'):
+                i = urllib.parse.unquote(i)
                 print(i)
                 os.system('cmd /c "{} & {} & {}"'.format(i, i.replace(
                     lang_type[lang_sequence[4]][lang_sequence[0]],
