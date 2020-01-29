@@ -11,7 +11,8 @@ def open_source_file(content):
         ['en', 'tc', 'sc'],
         ['english', 'tc_chi', 'sc_chi'],
         ['eng', 'chi', 'sc'],
-        ['english', 'chinese', 'sc']
+        ['english', 'chinese', 'sc'],
+        ['english', 'big5', 'chs']
     ]
 
     for iindex, i in enumerate(lang_type):
