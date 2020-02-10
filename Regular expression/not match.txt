@@ -1,0 +1,9 @@
+[match something not match]
+regex: href="((?!https?:\/\/)[^"]+\.)htm"
+replace with: href="$1html"
+
+match:
+<a href="reports.html">
+
+not match:
+<a href="http://www.protocol.gov.hk/chs/honours/hon_relevant.htm">
