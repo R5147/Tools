@@ -1,1 +1,2 @@
 [\x{4e00}-\x{9fa5}]+
+Reference: https://www.cnblogs.com/seanxyh/archive/2013/04/03/2998596.html (正则匹配中文)
