@@ -33,7 +33,7 @@ find = 'l'
 replace_text = 'p'
 sequence = 1
 
-print(string.replace(find, replace_text, sequence))  # Hepllo worlllllld
+print(string_replace(string, find, replace_text, sequence))  # Hepllo worlllllld
 print(string_replace(string, find, replace_text, sequence))  # Hepllo worlllllld
 
 sequence = 4
