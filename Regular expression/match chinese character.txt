@@ -8,5 +8,7 @@ Reference: https://www.cnblogs.com/seanxyh/archive/2013/04/03/2998596.html (æ­£å
 [^\W\s\d_a-zA-Z]
 match Chinese character only (notepad++)
 
+[\u4E00-\uFA29]
+match Chinese character only (JavaScript)
 
 Reference: self
