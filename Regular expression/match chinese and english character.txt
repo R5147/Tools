@@ -1,2 +1,2 @@
 [^\W\s\d_]
-match only chinese and English character
+match only chinese and English character (notepad++)
