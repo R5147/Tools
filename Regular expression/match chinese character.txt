@@ -3,10 +3,10 @@
 Reference: https://www.cnblogs.com/seanxyh/archive/2013/04/03/2998596.html (正则匹配中文)
 
 
-[^-!$@%^&#*()_+|~=`{}\[\]:";'<>?,.\/a-zA-Z0-9\s] (notepadd++)
+[^-!$@%^&#*()_+|~=`{}\[\]:";'<>?,.\/a-zA-Z0-9\s] (notepad++)
 
 [^\W\s\d_a-zA-Z]
-match Chinese character only
+match Chinese character only (notepad++)
 
 
 Reference: self
