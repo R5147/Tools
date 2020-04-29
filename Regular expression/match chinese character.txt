@@ -5,4 +5,8 @@ Reference: https://www.cnblogs.com/seanxyh/archive/2013/04/03/2998596.html (æ­£å
 
 [^-!$@%^&#*()_+|~=`{}\[\]:";'<>?,.\/a-zA-Z0-9\s] (notepadd++)
 
+[^\W\s\d_a-zA-Z]
+match Chinese character only
+
+
 Reference: self
