@@ -12,4 +12,8 @@ match Chinese character only (notepad++)
 match Chinese character only (JavaScript)
 reference: https://blog.csdn.net/QQ635785620/article/details/11201503
 
+[\u4e00-\u9fa5]
+match Chinese character only (JavaScript)
+reference: https://blog.csdn.net/QQ635785620/article/details/11201503
+
 Reference: self
