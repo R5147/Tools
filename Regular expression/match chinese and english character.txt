@@ -1,0 +1,2 @@
+[^\W\s\d_]
+match only chinese and English character
