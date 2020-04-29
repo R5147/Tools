@@ -1,2 +1,5 @@
 [^\W\s\d_]
-match only chinese and English character (notepad++)
+match only Chinese and English character (notepad++)
+
+[\u4E00-\uFA29a-zA-Z]
+match only Chinses and English character (JavaScript)
