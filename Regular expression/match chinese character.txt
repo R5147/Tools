@@ -13,7 +13,7 @@ match Chinese character only (JavaScript)
 reference: https://blog.csdn.net/QQ635785620/article/details/11201503
 
 /([^\x00-\x7F])/gi
-match Chinese character only (JavaScript)
+match Chinese character only (JavaScript/notepad++)
 reference: company project
 
 [\u4e00-\u9fa5]
